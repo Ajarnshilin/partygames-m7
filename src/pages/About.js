@@ -1,4 +1,5 @@
 import React from 'react'
+import withHelmet from '../util/withHelmet'
 
 function About () {
   return (
