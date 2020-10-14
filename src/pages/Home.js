@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import withHelmet from '../util/withHelmet'
 import BannerBlock from '../components/BannerBlock'
+import { Title, Subtitle } from '../components/Typography'
 
 const Content = styled.div`
   padding: 8rem;
