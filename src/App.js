@@ -7,7 +7,8 @@ import GlobalStyle from './components/GlobalStyle'
 
 function App() {
   return (
-    <div>
+    <>
+    <GlobalStyle />
       <Router>
         <NavBar />
         <Suspense fallback='...loading'>
@@ -18,7 +19,7 @@ function App() {
           </Switch>
         </Suspense>
       </Router>
-    </div>
+    </>
   );
 }
 
