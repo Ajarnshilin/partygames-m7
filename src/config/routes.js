@@ -20,4 +20,19 @@ export default{
   //   path:'/post/:postId',
   //   component: lazy(()=> import('../pages/Posts'))
   // }
+  Register:{
+    path: "/Register",
+    exact: true,
+    component: lazy(()=> import('../pages/Register'))
+  },
+  Post:{
+    path: "/Post",
+    exact: true,
+    component: lazy(()=> import('../pages/Post'))
+  },
+  Profile:{
+    path: "/Profile",
+    exact: true,
+    component: lazy(()=> import('../pages/Profile'))
+  },
 }
