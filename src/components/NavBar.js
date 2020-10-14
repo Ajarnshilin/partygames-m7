@@ -44,7 +44,7 @@ function NavBar () {
             <Link to='/login'>login</Link>
           </Action>
           <Action>
-            <Link to='/posts'>Posts</Link>
+            <Link to='/about'>About</Link>
           </Action>
         </ActionContainer>
       </Wrapper>
