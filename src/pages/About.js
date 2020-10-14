@@ -4,7 +4,7 @@ import backgroundImage from '../assets/rockman.jpg'
 import BannerBlock from '../components/BannerBlock'
 import { Title, Subtitle } from '../components/Typography'
 
-function Register () {
+function About () {
   return (
     <div>
       <BannerBlock src={backgroundImage}>
