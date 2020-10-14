@@ -41,7 +41,7 @@ function NavBar () {
             <Link to='/'>Home</Link>
           </Action>
           <Action>
-            <Link to='/login'>login</Link>
+            <Link to='/login'>Login</Link>
           </Action>
           <Action>
             <Link to='/about'>About</Link>
