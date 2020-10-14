@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import withHelmet from '../util/withHelmet'
+import backgroundImage from '../assets/rockman.jpg'
 import BannerBlock from '../components/BannerBlock'
 import { Title, Subtitle } from '../components/Typography'
 
