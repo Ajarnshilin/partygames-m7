@@ -18,4 +18,4 @@ function Home () {
     </div>
   )
 }
-export default withHelmet('Ajarn | Blog App')(Home)
+export default withHelmet('PartyGames')(Home)
