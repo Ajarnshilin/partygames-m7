@@ -16,8 +16,8 @@ export default{
     exact: true,
     component: lazy(()=> import('../pages/About'))
   },
-  Posts:{
-    path:'/post/:postId',
-    component: lazy(()=> import('../pages/Posts'))
-  }
+  // Posts:{
+  //   path:'/post/:postId',
+  //   component: lazy(()=> import('../pages/Posts'))
+  // }
 }
