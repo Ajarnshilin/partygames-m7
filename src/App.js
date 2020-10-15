@@ -11,7 +11,7 @@ function App() {
     <GlobalStyle />
       <Router>
         <NavBar />
-        <Suspense fallback='...loading'>
+        <Suspense fallback='...Loading please wait...'>
           <Switch>
             {Object.keys(routes).map(routeKey => (
               <Route key={routeKey} {...routes[routeKey]} />
