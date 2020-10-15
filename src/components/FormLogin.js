@@ -34,6 +34,10 @@ const Input = styled.input`
     border-radius: 5px;
     border: none;
     border:solid 1px gray;
+    outline: none;
+    &:focus {
+        border: 1px solid #0C1737;
+    }
 `
 
 const Login = styled.button`
