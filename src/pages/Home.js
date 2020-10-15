@@ -5,6 +5,7 @@ import backgroundImage from '../assets/rockman.jpg'
 import BannerBlock from '../components/BannerBlock'
 import { Title, Subtitle } from '../components/Typography'
 import Content from '../components/Content'
+import gameImage from '../assets/ow.jpg'
 
 const PostList = styled.div`
     width: 100%;
@@ -25,10 +26,11 @@ function Home () {
     <div>
       <BannerBlock src={backgroundImage}>
         <Title>PartyGames</Title>
+        {gameImage}
         <Subtitle></Subtitle>
       </BannerBlock>
       <PostList>
-        <Content></Content>
+        <Content src={gameImage}></Content>
         <Content></Content>
         <Content></Content>
       </PostList>

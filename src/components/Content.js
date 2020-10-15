@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import gameImage from '../assets/ow.jpg'
 
 const Games = styled.div`
     margin: 25px;
@@ -12,6 +11,7 @@ const Games = styled.div`
 const Images = styled.div`
     width: 320px;
     height: 300px;
+    background-image: url(${props => props.src});
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 10px 0 0;
@@ -88,10 +88,12 @@ const DetailsRight = styled.div`
     }
 `
 
-function Content() {
+function Content({src, height = 100, children}) {
     return (
             <Games>
-                <Images src={gameImage}></Images>
+                <Images src={src} height={height}>
+                  {children}
+                </Images>
                 <Details>
                     <DetailsLeft>
                         <h3>Overwatch</h3>
