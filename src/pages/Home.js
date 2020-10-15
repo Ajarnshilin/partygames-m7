@@ -5,7 +5,9 @@ import backgroundImage from '../assets/rockman.jpg'
 import BannerBlock from '../components/BannerBlock'
 import { Title, Subtitle } from '../components/Typography'
 import Content from '../components/Content'
-import gameImage from '../assets/ow.jpg'
+import Overwatch from '../assets/games/ow.jpg'
+import Minecraft from '../assets/games/mc.jpg'
+import PubG from '../assets/games/pubg.jpg'
 
 const PostList = styled.div`
     width: 100%;
@@ -26,13 +28,12 @@ function Home () {
     <div>
       <BannerBlock src={backgroundImage}>
         <Title>PartyGames</Title>
-        {gameImage}
         <Subtitle></Subtitle>
       </BannerBlock>
       <PostList>
-        <Content src={gameImage}></Content>
-        <Content></Content>
-        <Content></Content>
+        <Content src={Overwatch}></Content>
+        <Content src={Minecraft}></Content>
+        <Content src={PubG}></Content>
       </PostList>
     </div>
   )
