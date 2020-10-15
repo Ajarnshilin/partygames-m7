@@ -12,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
    font-size: 20px;
 
    scroll-behavior: smooth;
+
+   background-color: #0C1737;
  }
 
  a {
