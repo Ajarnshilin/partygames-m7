@@ -34,16 +34,23 @@ const Input = styled.input`
     border-radius: 5px;
     border: none;
     border:solid 1px gray;
+    outline: none;
+    &:focus {
+        border: 1px solid #0C1737;
+    }
 `
 
 const Textarea = styled.textarea`
     margin: 10px 0;
-    padding: 0 10px;
+    padding: 5px 10px;
     height: 50px;
     border-radius: 5px;
-    border: none;
     border:solid 1px gray;
     resize: none;
+    outline: none;
+    &:focus {
+        border: 1px solid #0C1737;
+    }
 `
 
 const Button = styled.button`
