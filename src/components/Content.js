@@ -39,6 +39,7 @@ const Details = styled.div`
     margin: 0;
     padding: 5px 10px;
     color: #4678B0;
+    font-weight: bold;
     &:hover {
     text-decoration: underline;
 
@@ -52,6 +53,7 @@ const Details = styled.div`
 
 const DetailsLeft = styled.div`
     width: 200px;
+    padding: 10px 0;
     p {
         font-size: 15px;
     }
@@ -63,10 +65,11 @@ const DetailsRight = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    & h2 {
+    h2 {
     color: black;
+    font-weight: bold;
     }
-    & button {
+    button {
     border: none;
     color: white;
     padding: 5px 32px;
