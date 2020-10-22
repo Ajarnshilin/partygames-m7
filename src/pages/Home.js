@@ -18,14 +18,14 @@ const PostList = styled.div`
     align-items: center;
     box-sizing: border-box;
     padding: 50px 0;
-    & a {
+    a {
     text-decoration: none;
     }
 `
 
 function Home () {
   return (
-    <div>
+    <>
       <BannerBlock src={backgroundImage}>
         <Title>PartyGames</Title>
         <Subtitle></Subtitle>
@@ -35,7 +35,7 @@ function Home () {
         <Content src={Minecraft}></Content>
         <Content src={PubG}></Content>
       </PostList>
-    </div>
+    </>
   )
 }
 export default withHelmet('PartyGames')(Home)
