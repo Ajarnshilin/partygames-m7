@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     height: 500px;
@@ -107,8 +108,8 @@ function FormLogin() {
                 </Top>
 
                 <Submit>
-                    <Button type="submit">Party You've Posted</Button>
-                    <Button type="submit">Party You've Joined</Button>
+                    <Button type="submit"><Link to='/Posted'>Party You've Posted</Link></Button>
+                    <Button type="submit"><Link to='/Accepted'>Party You've Joined</Link></Button>
                 </Submit>
 
             </Form>
