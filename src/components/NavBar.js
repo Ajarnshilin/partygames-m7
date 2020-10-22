@@ -35,7 +35,7 @@ function NavBar () {
   return (
     <Container isScroll={isScroll}>
       <Wrapper>
-        <Logo>Logo</Logo>
+        <Logo><Link to='/'>Party Games</Link></Logo>
         <ActionContainer>
           <Action>
             <Link to='/'>Home</Link>
