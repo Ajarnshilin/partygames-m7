@@ -99,13 +99,13 @@ function FormLogin() {
             <Form>
                 <Title>Post</Title>
                 <a>Title</a>
-                <Input type="text" name="username" id="username"></Input>
+                <Input type="text" placeholder="What are you playing?"></Input>
 
                 <a>Details</a>
-                <Textarea type="text" name="password" id="password"></Textarea>
+                <Textarea type="text" placeholder="Tell people more about your party's game style"></Textarea>
 
                 <a>Party Size</a>
-                <Input type="text" name="password" id="password"></Input>
+                <Input type="text" placeholder="The number of member you need"></Input>
 
                 <Submit>
                     <Button type="submit">Post</Button>
