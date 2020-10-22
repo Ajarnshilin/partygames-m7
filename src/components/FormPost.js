@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     height: 500px;
@@ -9,6 +10,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
 `
 
 const Form = styled.form`
@@ -16,20 +18,25 @@ const Form = styled.form`
     height: 100%;
     display: flex;
     flex-direction: column;
+    a {
+        margin-top: 5px;
+        font-size: 16px;
+    }
 `
 
 const Title = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 150px;
     /* margin: 500px; */
-    font-size: 3rem;
+    font-size: 2rem;
+    color: #1E3859;
 `
 
 const Input = styled.input`
     margin: 10px 0;
-    padding: 0 10px;
+    padding: 5px 10px;
     height: 30px;
     border-radius: 5px;
     border: none;
@@ -41,23 +48,25 @@ const Input = styled.input`
 `
 
 const Textarea = styled.textarea`
+    height: 150px;
     margin: 10px 0;
-    padding: 5px 10px;
-    height: 50px;
+    /* padding: 5px 10px; */
     border-radius: 5px;
+    border: none;
     border:solid 1px gray;
-    resize: none;
     outline: none;
+    resize: none;
+    padding: 5px 10px;
     &:focus {
         border: 1px solid #0C1737;
     }
 `
 
 const Button = styled.button`
-    height: 40px;
-    width: 40%;
-    background-color: #57A4CC;
-    margin-top: 20px;
+    height: 45px;
+    width: 110px;
+    background-color: #4678B0;
+    margin-top: 30px;
     border: 0;
     color: white;
     font-size: 20px;
@@ -71,35 +80,35 @@ const Button = styled.button`
 
 const Submit = styled.div`
     width: 100%;
+    height: 200px;
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
     align-items: center;
-    &a {
-    margin-top: 20px;
-    height: 30px;
+    a {
     width: 100%;
-    color: unset;
-    text-decoration: none;
+    font-size: 16px;
+    margin: 20px 0;
     }
 `
 
 function FormLogin() {
     return (
         <Container>
-            <Form class="form" method="POST" action="{{route('/login')}}">
+            <Form>
                 <Title>Post</Title>
-                <a for="title">Title</a>
-                <Input class="input" type="text" name="username" id="username"></Input>
+                <a>Title</a>
+                <Input type="text" name="username" id="username"></Input>
 
-                <a for="details">Details</a>
-                <Textarea class="input" type="text" name="password" id="password"></Textarea>
+                <a>Details</a>
+                <Textarea type="text" name="password" id="password"></Textarea>
 
-                <a for="partySize">Party Size</a>
-                <Input class="input" type="text" name="password" id="password"></Input>
+                <a>Party Size</a>
+                <Input type="text" name="password" id="password"></Input>
 
                 <Submit>
-                    <Button class="submit-login" type="submit">Post</Button>
+                    <Button type="submit">Post</Button>
                 </Submit>
 
             </Form>
