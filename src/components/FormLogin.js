@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     height: 500px;
@@ -9,6 +10,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 `
 
 const Form = styled.form`
@@ -16,6 +18,10 @@ const Form = styled.form`
     height: 100%;
     display: flex;
     flex-direction: column;
+    a {
+        margin-top: 5px;
+        font-size: 16px;
+    }
 `
 
 const Title = styled.span`
@@ -24,7 +30,8 @@ const Title = styled.span`
     align-items: center;
     height: 100px;
     /* margin: 500px; */
-    font-size: 3rem;
+    font-size: 2rem;
+    color: #1E3859;
 `
 
 const Input = styled.input`
@@ -41,13 +48,13 @@ const Input = styled.input`
 `
 
 const Login = styled.button`
-    height: 30px;
-    width: 100%;
-    background-color: #57A4CC;
-    margin-top: 20px;
+    height: 45px;
+    width: 110px;
+    background-color: #4678B0;
+    margin: 30px;
     border: 0;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     outline: none;
     border-radius: 5px;
     cursor: pointer;
@@ -56,51 +63,44 @@ const Login = styled.button`
     }
 `
 
-const Register = styled.button`
-    height: 30px;
-    width: 100%;
-    color: #57A4CC;
-    background-color: #ece3da;
-    margin-top: 20px;
-    border: 0;
-    color: white;
-    font-size: 16px;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-    &:hover {
-        background-color: gray;
-    }
-`
-
 const Submit = styled.div`
     width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    &a {
-    margin-top: 20px;
-    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    a {
     width: 100%;
-    color: unset;
-    text-decoration: none;
+    font-size: 16px;
+    margin: 50px 0;
     }
+`
+
+const Register = styled.button`
+    border: none;
+    background-color: unset;
+    font-size: 16px;
+    color: #4678B0;
+    cursor: pointer;
+    outline: none;
 `
 
 function FormLogin() {
     return (
         <Container>
-            <Form class="form" method="POST" action="{{route('/login')}}">
-                <Title>Login</Title>
-                <a for="username">Username</a>
-                <Input class="input" type="text" name="username" id="username" placeholder="e.g. JohnDoe"></Input>
+            <Form>
+                <Title>Sign In</Title>
+                <a>Username</a>
+                <Input type="text" name="username" id="username" placeholder="e.g. JohnDoe"></Input>
 
-                <a for="password">Password</a>
-                <Input class="input" type="password" name="password" id="password" placeholder="********"></Input>
+                <a>Password</a>
+                <Input type="password" name="password" id="password" placeholder="**********"></Input>
 
                 <Submit>
-                    <Login class="submit-login" type="submit">LOGIN</Login>
-                    <Register class="submit-register" type="button" onClick="../pages/Register.js">REGISTER</Register>
+                    <Login type="submit">Sign In</Login>
+                    <a>Doesn't have an account? | <Register><Link to='/Register'>Sign Up</Link></Register></a>
                 </Submit>
 
             </Form>
