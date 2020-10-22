@@ -40,4 +40,14 @@ export default{
     exact: true,
     component: lazy(()=> import('../pages/Details'))
   },
+  Accepted:{
+    path: "/Accepted",
+    exact: true,
+    component: lazy(()=> import('../pages/Accepted'))
+  },
+  Posted:{
+    path: "/Posted",
+    exact: true,
+    component: lazy(()=> import('../pages/Posted'))
+  },
 }
