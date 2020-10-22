@@ -50,6 +50,12 @@ function NavBar () {
             <Link to='/Details'>Details</Link>
           </Action>
           <Action>
+            <Link to='/Accepted'>Accepted</Link>
+          </Action>
+          <Action>
+            <Link to='/Posted'>Posted</Link>
+          </Action>
+          <Action>
             <Link to='/login'>Login</Link>
           </Action>
           <Action>
