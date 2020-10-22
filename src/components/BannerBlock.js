@@ -7,8 +7,6 @@ const BackgroundImage = styled.div`
   background-image: url(${props => props.src});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position:center;
-  background-attachment: fixed;
 
   position: relative;
 `
