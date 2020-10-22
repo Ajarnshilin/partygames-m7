@@ -56,7 +56,7 @@ const Title = styled.span`
 const Button = styled.button`
     height: 35px;
     width: 80%;
-    background-color: #57A4CC;
+    background-color: #4678B0;
     margin-top: 20px;
     border: 0;
     color: white;
