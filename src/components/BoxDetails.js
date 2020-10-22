@@ -72,6 +72,11 @@ const Button = styled.button`
     color: white;
     font-size: 25px;
     border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    :hover{
+        background-color: #1E3859;
+    }
 `
 
 function BoxDetails() {
