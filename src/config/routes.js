@@ -35,4 +35,9 @@ export default{
     exact: true,
     component: lazy(()=> import('../pages/Profile'))
   },
+  Details:{
+    path: "/Details",
+    exact: true,
+    component: lazy(()=> import('../pages/Details'))
+  },
 }
