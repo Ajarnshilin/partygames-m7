@@ -17,13 +17,30 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 `
+
 const Top = styled.div`
+    width: 250px;
     display: flex;
     flex-direction: column;
-    & a {
-        margin: 5px 0;
+    a {
+        margin: 10px 0;
     }
+`
+
+const Space = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+const Edit = styled.button`
+    border: none;
+    background-color: unset;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    color: #1E3859;
 `
 
 const Title = styled.span`
@@ -33,11 +50,12 @@ const Title = styled.span`
     height: 100px;
     /* margin: 500px; */
     font-size: 2rem;
+    color: #1E3859;
 `
 
 const Button = styled.button`
     height: 35px;
-    width: 100%;
+    width: 80%;
     background-color: #57A4CC;
     margin-top: 20px;
     border: 0;
@@ -57,8 +75,9 @@ const Submit = styled.div`
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: center;
     padding-bottom: 50px;
-    &a {
+    a {
     margin-top: 20px;
     height: 30px;
     width: 100%;
@@ -70,17 +89,26 @@ const Submit = styled.div`
 function FormLogin() {
     return (
         <Container>
-            <Form class="form" method="POST" action="{{route('/login')}}">
+            <Form>
                 <Top>
                     <Title>Profile</Title>
-                    <a for="username">Username</a>
-                    <a for="contact">Contacts</a>
-                    <a for="email">Email</a>
+                    <Space>
+                        <a>Username</a>
+                        <Edit>Edit</Edit>
+                    </Space>
+                    <Space>
+                        <a>Contacts</a>
+                        <Edit>Edit</Edit>
+                    </Space>
+                    <Space>
+                        <a>Email</a>
+                        <Edit>Edit</Edit>
+                    </Space>
                 </Top>
 
                 <Submit>
-                    <Button class="submit-login" type="submit">Party You've Posted</Button>
-                    <Button class="submit-login" type="submit">Party You've Joined</Button>
+                    <Button type="submit">Party You've Posted</Button>
+                    <Button type="submit">Party You've Joined</Button>
                 </Submit>
 
             </Form>
