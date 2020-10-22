@@ -14,10 +14,13 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex: 1;
-  padding: 2rem;
+  padding: 1.5rem;
 `
 
-const Logo = styled.div``
+const Logo = styled.div`
+  font-size: 30px;
+  font-weight: bold;
+`
 
 const ActionContainer = styled.ul`
   display: flex;
@@ -41,10 +44,19 @@ function NavBar () {
             <Link to='/'>Home</Link>
           </Action>
           <Action>
+            <Link to='/Post'>Post</Link>
+          </Action>
+          <Action>
+            <Link to='/Details'>Details</Link>
+          </Action>
+          <Action>
             <Link to='/login'>Login</Link>
           </Action>
           <Action>
-            <Link to='/about'>About</Link>
+            <Link to='/Register'>Register</Link>
+          </Action>
+          <Action>
+            <Link to='/Profile'>Profile</Link>
           </Action>
         </ActionContainer>
       </Wrapper>
