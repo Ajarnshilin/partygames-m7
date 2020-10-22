@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
    height: 100vh;
    width: 100vw;
 
-   font-family: 'Kanit', sans-serif;
+   font-family: 'Roboto', sans-serif;
    font-size: 20px;
 
    scroll-behavior: smooth;
