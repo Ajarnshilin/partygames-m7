@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import Overwatch from '../assets/games/ow.jpg'
+import Apex from '../assets/games/apex.jpg'
+import Minecraft from '../assets/games/mc.jpg'
+import PUBG from '../assets/games/pubg.jpg'
+import Valorant from '../assets/games/va.png'
 
 const Games = styled.div`
     margin: 25px;
@@ -91,20 +96,42 @@ const DetailsRight = styled.div`
     }
 `
 
-function Content({src, height = 100, children}) {
+export function Content(props) {
+  let image_src = ''
+
+  switch(props.src) {
+    case'Overwatch':
+    image_src = Overwatch
+    break
+    case'Apex':
+    image_src = Apex
+    break;
+    case'Minecraft':
+    image_src = Minecraft
+    break;
+    case'PUBG':
+    image_src = PUBG
+    break;
+    case'Valorant':
+    image_src = Valorant
+    break;
+  }
+
     return (
             <Games>
-                <Images src={src} height={height}>
-                  {children}
+                <Images src={image_src} height={props.height}>
+                  {props.children}
                 </Images>
                 <Details>
                     <DetailsLeft>
-                        <h3>Overwatch</h3>
-                        <p>Arm Supatat</p>
-                        <p>โพสต์เมื่อ 5 นาทีที่แล้ว</p>
+                        <h3>{props.title}</h3>
+                        <p>{props.user}</p>
+                        <p>{props.date}</p>
                     </DetailsLeft>
                     <DetailsRight>
-                        <h2>0/5</h2>
+                    <h2>
+                      1/{props.party}
+                      </h2>
                         <button>JOIN</button>
                     </DetailsRight>
                 </Details>
@@ -112,4 +139,4 @@ function Content({src, height = 100, children}) {
     )
 }
 
-export default Content
+// export default Content
