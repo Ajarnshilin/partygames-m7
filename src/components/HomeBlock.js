@@ -19,7 +19,7 @@ const BackgroundOverlay = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 `
 
 function BackgroundBlock ({ src, height = 100, children }) {
