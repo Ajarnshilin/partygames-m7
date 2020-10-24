@@ -9,7 +9,7 @@ const Container = styled.div`
   z-index: 10000;
   background-color: ${props => props.isScroll ? '#090d20' : 'transparent'};
   color: ${props => props.isScroll ? '#fff' : '#fff'};
-  transition: background-color .5s
+  transition: background-color .5s;
 `
 const Wrapper = styled.div`
   display: flex;
@@ -46,9 +46,9 @@ function NavBar () {
           <Action>
             <Link to='/Post'>Post</Link>
           </Action>
-          <Action>
+          {/* <Action>
             <Link to='/Details'>Details</Link>
-          </Action>
+          </Action> */}
           <Action>
             <Link to='/Accepted'>Accepted</Link>
           </Action>
