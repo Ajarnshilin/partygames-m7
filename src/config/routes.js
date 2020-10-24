@@ -36,14 +36,19 @@ export default{
     component: lazy(()=> import('../pages/Profile'))
   },
   Details:{
-    path: "/Details",
+    path: "/Details/:id",
     exact: true,
     component: lazy(()=> import('../pages/Details'))
   },
   Accepted:{
-    path: "/Accepted",
+    path: "/Accepted/:id",
     exact: true,
     component: lazy(()=> import('../pages/Accepted'))
+  },
+  Joined:{
+    path: "/Joined/:id",
+    exact: true,
+    component: lazy(()=> import('../pages/Joined'))
   },
   Posted:{
     path: "/Posted",
