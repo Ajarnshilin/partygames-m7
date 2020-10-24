@@ -13,14 +13,14 @@ import Va from '../assets/games/va.png'
 import { Link } from 'react-router-dom'
 
 const PostList = styled.div`
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 100px 50px;
     a {
     text-decoration: none;
     }
@@ -48,9 +48,35 @@ const Post = styled.button`
 const Center = styled.div`
   margin: 70px 0 0 150px;
   height: 300px;
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-direction: column;
+`
+
+const Bottom = styled.div`
+  height: 170px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
+
+const SD = styled.button`
+  font-size: 30px;
+  padding: .5rem 1rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  cursor: pointer;
+  transition: background-color .3s;
+
+  text-transform: uppercase;
+
+  &:visited {
+    color: #fff;
+  }
 `
 
 function Home() {
@@ -58,14 +84,17 @@ function Home() {
     <>
       <HomeBlock src={backgroundImage}>
         <Center>
-        <Title>PartyGames</Title>
+        <Title>Party Games</Title>
         <Subtitle>You are not limited to the features of this template. It is suitable for gaming
         site, and for any business project. Pre-packed demos will help you to quickly
         run your new creative website.</Subtitle>
-        <Post><Link to='/Post'>POST</Link></Post>
         </Center>
+        <Bottom>
+          <Post><Link to='/Post'>POST</Link></Post>
+          <SD as='a' href='#content'>V</SD>
+        </Bottom>
       </HomeBlock>
-      <PostList>
+      <PostList  id='content'>
         <Content src={Overwatch}></Content>
         <Content src={Minecraft}></Content>
         <Content src={PubG}></Content>
