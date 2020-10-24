@@ -13,16 +13,18 @@ import Va from '../assets/games/va.png'
 import { Link } from 'react-router-dom'
 import { getData } from '../services/fetchData'
 import { O_WRONLY } from 'constants'
+import Lottie from 'react-lottie';
+import animationData from '../lotties/scroll-down';
 
 const PostList = styled.div`
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 100px 50px;
     a {
     text-decoration: none;
     }
@@ -30,7 +32,7 @@ const PostList = styled.div`
 
 const Post = styled.button`
     width: 110px;
-    height: 40px;
+    padding: 10px 0;
     border: none;
     color: white;
     text-align: center;
@@ -50,10 +52,45 @@ const Post = styled.button`
 const Center = styled.div`
   margin: 70px 0 0 150px;
   height: 300px;
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-direction: column;
 `
+
+const Bottom = styled.div`
+  height: 170px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ScrollDown = styled.button`
+  font-size: 30px;
+  padding: .5rem 1rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  cursor: pointer;
+  transition: background-color .3s;
+
+  text-transform: uppercase;
+
+  &:visited {
+    color: #fff;
+  }
+`
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
 
 function Home() {
   const [data , setData] = useState([])
@@ -71,12 +108,19 @@ function Home() {
     <>
       <HomeBlock src={backgroundImage}>
         <Center>
-        <Title>PartyGames</Title>
-        <Subtitle>You are not limited to the features of this template. It is suitable for gaming
-        site, and for any business project. Pre-packed demos will help you to quickly
+          <Title>Party Games</Title>
+          <Subtitle>You are not limited to the features of this template. It is suitable for gaming
+          site, and for any business project. Pre-packed demos will help you to quickly
         run your new creative website.</Subtitle>
-        <Post><Link to='/Post'>POST</Link></Post>
         </Center>
+        <Bottom>
+          <Post><Link to='/Post'>POST</Link></Post>
+          <ScrollDown as='a' href='#content'><Lottie
+            options={defaultOptions}
+            height={100}
+            width={100}
+          /></ScrollDown>
+        </Bottom>
       </HomeBlock>
       <PostList>
         {data.map((item, index) => (

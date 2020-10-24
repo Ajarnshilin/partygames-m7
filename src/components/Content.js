@@ -21,6 +21,7 @@ const Images = styled.div`
     background-repeat: no-repeat;
     border-radius: 10px 10px 0 0;
     transition: .5s ease;
+    cursor: pointer;
     &:hover{
     opacity: 0.5;
     }
@@ -45,6 +46,7 @@ const Details = styled.div`
     padding: 5px 10px;
     color: #4678B0;
     font-weight: bold;
+    cursor: pointer;
     &:hover {
     text-decoration: underline;
 
@@ -91,7 +93,6 @@ const DetailsRight = styled.div`
     z-index: 99;
     &:hover {
     background-color: #1E3859;
-
     }
     }
 `
