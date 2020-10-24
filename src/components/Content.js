@@ -16,6 +16,7 @@ const Images = styled.div`
     background-repeat: no-repeat;
     border-radius: 10px 10px 0 0;
     transition: .5s ease;
+    cursor: pointer;
     &:hover{
     opacity: 0.5;
     }
@@ -40,6 +41,7 @@ const Details = styled.div`
     padding: 5px 10px;
     color: #4678B0;
     font-weight: bold;
+    cursor: pointer;
     &:hover {
     text-decoration: underline;
 
@@ -86,29 +88,28 @@ const DetailsRight = styled.div`
     z-index: 99;
     &:hover {
     background-color: #1E3859;
-
     }
     }
 `
 
-function Content({src, height = 100, children}) {
+function Content({ src, height = 100, children }) {
     return (
-            <Games>
-                <Images src={src} height={height}>
-                  {children}
-                </Images>
-                <Details>
-                    <DetailsLeft>
-                        <h3>Overwatch</h3>
-                        <p>Arm Supatat</p>
-                        <p>โพสต์เมื่อ 5 นาทีที่แล้ว</p>
-                    </DetailsLeft>
-                    <DetailsRight>
-                        <h2>0/5</h2>
-                        <button>JOIN</button>
-                    </DetailsRight>
-                </Details>
-            </Games>
+        <Games>
+            <Images src={src} height={height}>
+                {children}
+            </Images>
+            <Details>
+                <DetailsLeft>
+                    <h3>Overwatch</h3>
+                    <p>Arm Supatat</p>
+                    <p>โพสต์เมื่อ 5 นาทีที่แล้ว</p>
+                </DetailsLeft>
+                <DetailsRight>
+                    <h2>0/5</h2>
+                    <button>JOIN</button>
+                </DetailsRight>
+            </Details>
+        </Games>
     )
 }
 
