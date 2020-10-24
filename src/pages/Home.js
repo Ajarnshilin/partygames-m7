@@ -11,6 +11,8 @@ import PubG from '../assets/games/pubg.jpg'
 import Apex from '../assets/games/apex.jpg'
 import Va from '../assets/games/va.png'
 import { Link } from 'react-router-dom'
+import Lottie from 'react-lottie';
+import animationData from '../lotties/scroll-down';
 
 const PostList = styled.div`
     width: 100vw;
@@ -28,7 +30,7 @@ const PostList = styled.div`
 
 const Post = styled.button`
     width: 110px;
-    height: 40px;
+    padding: 10px 0;
     border: none;
     color: white;
     text-align: center;
@@ -62,7 +64,7 @@ const Bottom = styled.div`
   align-items: center;
 `
 
-const SD = styled.button`
+const ScrollDown = styled.button`
   font-size: 30px;
   padding: .5rem 1rem;
   background-color: transparent;
@@ -79,27 +81,40 @@ const SD = styled.button`
   }
 `
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
+
 function Home() {
   return (
     <>
       <HomeBlock src={backgroundImage}>
         <Center>
-        <Title>Party Games</Title>
-        <Subtitle>You are not limited to the features of this template. It is suitable for gaming
-        site, and for any business project. Pre-packed demos will help you to quickly
+          <Title>Party Games</Title>
+          <Subtitle>You are not limited to the features of this template. It is suitable for gaming
+          site, and for any business project. Pre-packed demos will help you to quickly
         run your new creative website.</Subtitle>
         </Center>
         <Bottom>
           <Post><Link to='/Post'>POST</Link></Post>
-          <SD as='a' href='#content'>V</SD>
+          <ScrollDown as='a' href='#content'><Lottie
+            options={defaultOptions}
+            height={100}
+            width={100}
+          /></ScrollDown>
         </Bottom>
       </HomeBlock>
-      <PostList  id='content'>
+      <PostList id='content'>
         <Content src={Overwatch}></Content>
         <Content src={Minecraft}></Content>
         <Content src={PubG}></Content>
         <Content src={Apex}></Content>
-        <Content src={Va}></Content> 
+        <Content src={Va}></Content>
       </PostList>
     </>
   )
