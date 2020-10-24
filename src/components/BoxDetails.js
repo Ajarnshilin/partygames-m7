@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import PubG from '../assets/games/pubg.jpg'
+import { Link, useParams } from 'react-router-dom'
+import Overwatch from '../assets/games/ow.jpg'
+import Apex from '../assets/games/apex.jpg'
+import Minecraft from '../assets/games/mc.jpg'
+import PUBG from '../assets/games/pubg.jpg'
+import Valorant from '../assets/games/va.png'
 
 const Container = styled.div`
     height: 500px;
@@ -40,6 +44,7 @@ const Image = styled.div`
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     /* background-position-y: 40px; */
     border-radius: 10px 0 0 10px;
 `
@@ -79,23 +84,45 @@ const Button = styled.button`
     }
 `
 
-function BoxDetails() {
+function BoxDetails(props) {
+  const { id } = useParams()
+  let image_src =''
+
+  switch(props.src) {
+    case'Overwatch':
+    image_src = Overwatch
+    break
+    case'Apex':
+    image_src = Apex
+    break;
+    case'Minecraft':
+    image_src = Minecraft
+    break;
+    case'PUBG':
+    image_src = PUBG
+    break;
+    case'Valorant':
+    image_src = Valorant
+    break;
+  }
     return (
         <Container>
-            <Image src={PubG}>
+            <Image src={image_src}>
             </Image>
             <Form>
                 <Top>
-                    <Title>Title</Title>
-                    <a>30/9/2563</a>
-                    <a>Posted by Username</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis orci elit. Pellentesque euismod eu nunc placerat auctor. Fusce non arcu vitae nisl sodales dictum. Proin ac est mauris.</p>
+                    <Title>{props.title}</Title>
+                    <a>{props.date}</a>
+                    <a>{props.user}</a>
+                    <p>{props.details}</p>
                 </Top>
                 <Bottom>
-                    <a>3/4</a>
-                    <Button>
-                        Join
-                </Button>
+                    <a>1/{props.party}</a>
+                    <Link to={`/Accepted/${id}`}>
+                      <Button>
+                          Join
+                      </Button>
+                    </Link>
                 </Bottom>
             </Form>
         </Container>
