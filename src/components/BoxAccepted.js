@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import PubG from '../assets/games/pubg.jpg'
+import Overwatch from '../assets/games/ow.jpg'
+import Apex from '../assets/games/apex.jpg'
+import Minecraft from '../assets/games/mc.jpg'
+import PUBG from '../assets/games/pubg.jpg'
+import Valorant from '../assets/games/va.png'
 
 const Container = styled.div`
     height: 500px;
@@ -10,7 +14,7 @@ const Container = styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 50px;
 `
 
 const Form = styled.form`
@@ -40,41 +44,88 @@ const Image = styled.div`
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     /* background-position-y: 40px; */
     border-radius: 10px 0 0 10px;
 `
 
 const Top = styled.div`
+    height: 50%;
     display: flex;
     flex-direction: column;
 `
 
-const Button = styled.button`
-    background-color: unset;
-    border: unset;
-    font-size: 20px;
-    width: 80px;
-    padding: 0;
-    cursor: pointer;
-    color: #1E3859;
+const Bottom = styled.div`
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    a {
+        font-size: 30px;
+        padding: 15px 35px;
+        font-weight: bold;
+        color: #707070;
+    }
 `
 
-function BoxDetails() {
+const Button = styled.button`
+    width: 120px;
+    height: 50px;
+    background-color: #4678B0;
+    border: 0;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    :hover{
+        background-color: #1E3859;
+    }
+`
+
+function BoxAccepted(props) {
+  let image_src =''
+
+  switch(props.src) {
+    case'Overwatch':
+    image_src = Overwatch
+    break
+    case'Apex':
+    image_src = Apex
+    break;
+    case'Minecraft':
+    image_src = Minecraft
+    break;
+    case'PUBG':
+    image_src = PUBG
+    break;
+    case'Valorant':
+    image_src = Valorant
+    break;
+  }
     return (
         <Container>
-            <Image src={PubG}>
+            <Image src={image_src}>
             </Image>
             <Form>
                 <Top>
-                    <Title>Title</Title>
-                    <a>30/9/2563</a>
-                    <a>Posted by Username</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis orci elit. Pellentesque euismod eu nunc placerat auctor. Fusce non arcu vitae nisl sodales dictum. Proin ac est mauris.</p>
-                    <Button>Contacts</Button>
+                    <Title>{props.title}</Title>
+                    <a>{props.date}</a>
+                    <a>{props.user}</a>
+                    <p>{props.details}</p>
                 </Top>
+                <Bottom>
+                    <a>1/{props.party}</a>
+                    <Link to='/'>
+                      <Button>
+                          Joined
+                      </Button>
+                    </Link>
+                </Bottom>
             </Form>
         </Container>
     )
 }
 
-export default BoxDetails
+export default BoxAccepted
