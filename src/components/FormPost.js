@@ -105,7 +105,7 @@ function FormLogin() {
                 <Textarea type="text" placeholder="Tell people more about your party's game style"></Textarea>
 
                 <a>Party Size</a>
-                <Input type="text" placeholder="The number of member you need"></Input>
+                <Input type="number" placeholder="The number of member you need"></Input>
 
                 <Submit>
                     <Button type="submit">Post</Button>
