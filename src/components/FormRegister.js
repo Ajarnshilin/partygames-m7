@@ -106,7 +106,7 @@ function FormRegister() {
     return (
         <Container>
         <Form method="POST" action="{{route('/login')}}">
-            <Title>Sign Up</Title>
+            <Title>Register</Title>
 
             <a>Username</a>
             <Input type ="text" name="username" id="username" placeholder="e.g. JohnDoe"></Input>
@@ -124,8 +124,8 @@ function FormRegister() {
             <Textarea type ="textarea"></Textarea>
 
             <Submit>
-            <Button type ="submit">Sign Up</Button>
-            <a>Already have an account? | <Register><Link to='/Login'>Sign In</Link></Register></a>
+            <Button type ="submit">Submit</Button>
+            <a>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></a>
             </Submit>
 
         </Form>
