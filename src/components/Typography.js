@@ -15,5 +15,4 @@ export const Subtitle = styled(Text)`
   font-size: 1rem;
   width: 600px;
   color: #B4CFD6;
-  margin: 2rem 0 0 0;
 `
