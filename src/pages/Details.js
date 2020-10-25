@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import withHelmet from '../util/withHelmet'
-import backgroundImage from '../assets/rockman.jpg'
+import backgroundImage from '../assets/background.gif'
 import BannerBlock from '../components/BannerBlock'
 import BoxDetails from '../components/BoxDetails'
 import { getDataById } from '../services/fetchData'
