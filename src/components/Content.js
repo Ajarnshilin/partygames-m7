@@ -131,7 +131,7 @@ export function Content(props) {
                     </DetailsLeft>
                     <DetailsRight>
                     <h2>
-                      1/{props.party}
+                      0/{props.party}
                       </h2>
                         <button>JOIN</button>
                     </DetailsRight>
