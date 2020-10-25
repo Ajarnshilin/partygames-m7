@@ -26,10 +26,25 @@ const ActionContainer = styled.ul`
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  align-items: center;
 `
 
 const Action = styled.li`
    padding: 0 1rem;
+`
+
+const Button = styled.button`
+  background-color: #57A4CC;
+  padding: 10px 25px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  :hover {
+    background-color: #1E3859;
+  }
 `
 
 function NavBar () {
@@ -43,26 +58,14 @@ function NavBar () {
           <Action>
             <Link to='/'>Home</Link>
           </Action>
-          <Action>
-            <Link to='/Post'>Post</Link>
-          </Action>
           {/* <Action>
             <Link to='/Details'>Details</Link>
           </Action> */}
           <Action>
-            <Link to='/Accepted'>Accepted</Link>
-          </Action>
-          <Action>
-            <Link to='/Posted'>Posted</Link>
-          </Action>
-          <Action>
-            <Link to='/login'>Login</Link>
-          </Action>
-          <Action>
-            <Link to='/Register'>Register</Link>
-          </Action>
-          <Action>
             <Link to='/Profile'>Profile</Link>
+          </Action>
+          <Action>
+            <Button><Link to='/login'>Login</Link></Button>
           </Action>
         </ActionContainer>
       </Wrapper>
