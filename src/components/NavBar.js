@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import useScroll from '../util/useScroll'
 import { Link } from 'react-router-dom'
+import Lottie from 'react-lottie';
+import animationData from '../lotties/party';
 
 const Container = styled.div`
   width: 100%;
@@ -20,6 +22,12 @@ const Wrapper = styled.div`
 const Logo = styled.div`
   font-size: 30px;
   font-weight: bold;
+  display:flex;
+  div{
+    position: relative;
+    right: 15px;
+    bottom: 20px;
+  }
 `
 
 const ActionContainer = styled.ul`
@@ -47,13 +55,27 @@ const Button = styled.button`
   }
 `
 
-function NavBar () {
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
+
+function NavBar() {
   const isScroll = useScroll({ scrollRange: 20 })
 
   return (
     <Container isScroll={isScroll}>
       <Wrapper>
-        <Logo><Link to='/'>Party Games</Link></Logo>
+        <Logo><Lottie
+          options={defaultOptions}
+          height={50}
+          width={50}
+        /><Link to='/'>Party Games</Link></Logo>
+        
         <ActionContainer>
           <Action>
             <Link to='/'>Home</Link>
