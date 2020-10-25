@@ -91,7 +91,7 @@ function FormLogin() {
     return (
         <Container>
             <Form>
-                <Title>Sign In</Title>
+                <Title>Login</Title>
                 <a>Username</a>
                 <Input type="text" name="username" id="username" placeholder="e.g. JohnDoe"></Input>
 
@@ -99,8 +99,8 @@ function FormLogin() {
                 <Input type="password" name="password" id="password" placeholder="**********"></Input>
 
                 <Submit>
-                    <Login type="submit">Sign In</Login>
-                    <a>Doesn't have an account? | <Register><Link to='/Register'>Sign Up</Link></Register></a>
+                    <Login type="submit">Login</Login>
+                    <a>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></a>
                 </Submit>
 
             </Form>
