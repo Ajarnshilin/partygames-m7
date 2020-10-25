@@ -116,10 +116,10 @@ function Home() {
         <Bottom>
           <Post><Link to='/Post'>POST</Link></Post>
           <ScrollDown as='a' href='#content'><Lottie
-            options={defaultOptions}
-            height={100}
-            width={100}
-          /></ScrollDown>
+          options={defaultOptions}
+          height={100}
+          width={100}
+        /></ScrollDown>
         </Bottom>
       </HomeBlock>
       <PostList id="content">
