@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import withHelmet from '../util/withHelmet'
-import backgroundImage from '../assets/rockman.jpg'
+import backgroundImage from '../assets/background.gif'
 import HomeBlock from '../components/HomeBlock'
 import { Title, Subtitle } from '../components/Typography'
 import { Content } from '../components/Content'
@@ -34,27 +34,27 @@ const Post = styled.button`
     width: 110px;
     padding: 10px 0;
     border: none;
-    color: white;
+    color: black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
-    background-color: #4678B0;
-    border-radius: 10px;
+    background-color: yellow;
+    border-radius: 30px;
     outline: none;
     margin-top: 20px;
     &:hover{
-    background-color: #1E3859;
+    background-color: white;
     }
 `
 
 const Center = styled.div`
-  margin: 70px 0 0 150px;
   height: 300px;
-  width: 350px;
+  width: 700px;
   display: flex;
   flex-direction: column;
+  margin: 0 0 0 120px;
 `
 
 const Bottom = styled.div`
@@ -122,7 +122,7 @@ function Home() {
           /></ScrollDown>
         </Bottom>
       </HomeBlock>
-      <PostList>
+      <PostList id="content">
         {data.map((item, index) => (
           <div key={index}>
             {user.filter(postUserId => postUserId.user_id === item.user_id).map((userItem, userIndex) => (
