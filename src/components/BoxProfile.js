@@ -95,21 +95,19 @@ function FormLogin() {
                     <Title>Profile</Title>
                     <Space>
                         <a>Username</a>
-                        <Edit>Edit</Edit>
                     </Space>
                     <Space>
                         <a>Contacts</a>
-                        <Edit>Edit</Edit>
                     </Space>
                     <Space>
                         <a>Email</a>
-                        <Edit>Edit</Edit>
                     </Space>
                 </Top>
 
                 <Submit>
+                    <Button type="submit"><Link to='/Accepted'>Party You've Accepted</Link></Button>
                     <Button type="submit"><Link to='/Posted'>Party You've Posted</Link></Button>
-                    <Button type="submit"><Link to='/Accepted'>Party You've Joined</Link></Button>
+                    <Button type="submit"><Link to='/Joined'>Party You've Joined</Link></Button>
                 </Submit>
 
             </Form>
