@@ -22,8 +22,8 @@ const Images = styled.div`
     border-radius: 10px 10px 0 0;
     transition: .5s ease;
     cursor: pointer;
-    &:hover{
-    opacity: 0.5;
+    :hover{
+    opacity: .5;
     }
 `
 
@@ -79,7 +79,7 @@ const DetailsRight = styled.div`
     button {
     border: none;
     color: white;
-    padding: 5px 32px;
+    padding: 5px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -91,7 +91,7 @@ const DetailsRight = styled.div`
     outline: none;
     cursor: pointer;
     z-index: 99;
-    &:hover {
+    :hover {
     background-color: #1E3859;
     }
     }
