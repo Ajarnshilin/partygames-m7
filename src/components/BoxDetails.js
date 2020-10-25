@@ -117,7 +117,7 @@ function BoxDetails(props) {
                     <p>{props.details}</p>
                 </Top>
                 <Bottom>
-                    <a>1/{props.party}</a>
+                    <a>0/{props.party}</a>
                     <Link to={`/Accepted/${id}`}>
                       <Button>
                           Join
