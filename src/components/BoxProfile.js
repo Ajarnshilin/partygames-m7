@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { useLogin } from '../contexts/ActionContext'
 
 const Container = styled.div`
     height: 500px;
@@ -88,19 +89,18 @@ const Submit = styled.div`
 `
 
 function FormLogin() {
+  const [{ isLogin, currentUsername}] = useLogin()
+
     return (
         <Container>
             <Form>
                 <Top>
                     <Title>Profile</Title>
                     <Space>
-                        <a>Username</a>
-                    </Space>
-                    <Space>
-                        <a>Contacts</a>
-                    </Space>
-                    <Space>
-                        <a>Email</a>
+                        {!isLogin ?
+                            <a>Username</a>
+                            : (currentUsername ? currentUsername : '')}
+
                     </Space>
                 </Top>
 
