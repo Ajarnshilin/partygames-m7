@@ -105,9 +105,9 @@ function FormLogin() {
                 </Top>
 
                 <Submit>
-                    <Button type="submit"><Link to='/Posted'>Party You've Posted</Link></Button>
-                    <Button type="submit"><Link to='/Joined'>Party You've Joined</Link></Button>
-                    <Button type="submit"><Link to='/Accepted'>Party You've Accepted</Link></Button>
+                    <Button type="submit"><Link to='/Posted'>Party you have posted</Link></Button>
+                    <Button type="submit"><Link to='/Joined'>Party you have joined</Link></Button>
+                    <Button type="submit"><Link to='/Accepted'>Party you are accepted</Link></Button>
                 </Submit>
 
             </Form>
