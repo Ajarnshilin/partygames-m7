@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import PostAPI from '../services/postAPI'
+import { useLogin } from '../contexts/ActionContext'
 
 const Container = styled.div`
     height: 500px;
@@ -95,6 +96,7 @@ const Submit = styled.div`
 `
 
 function FormLogin(callback) {
+  const [{ isLogin, userId}] = useLogin()
 
   const [values, setValues] = useState({
     title:'',
@@ -116,8 +118,8 @@ function FormLogin(callback) {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(values,"1")
-    PostAPI(values)
-    // console.log(values)
+    PostAPI({...values, user_id: userId})
+    console.log(userId)
   };
 
   useEffect(

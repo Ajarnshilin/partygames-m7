@@ -8,7 +8,8 @@ export default function RegisterAPI(values) {
       data: {
         "title": values.title,
         "details": values.email,
-        "party_size": values.party_size
+        "party_size": values.party_size,
+        "user_id": values.user_id
       },
       responseType: 'json', 
     }) .then(response => {
