@@ -95,15 +95,14 @@ const defaultOptions = {
 function Home() {
   const [data , setData] = useState([])
   const [user, setUser] = useState([])
-  const [date, setDate] = useState([])
+  // const [date, setDate] = useState([])
 
   useEffect (() => {
     getData('posts').then(response => setData(response))
-    getData('clients').then(response => setUser(response))
-    setDate(data.user_timestamps)
+    getData('register').then(response => setUser(response))
+    // setDate(data.user_timestamps)
   },[])
 
-  console.log(data)
   return (
     <>
       <HomeBlock src={backgroundImage}>
@@ -126,8 +125,8 @@ function Home() {
         {data.map((item, index) => (
           <div key={index}>
             {user.filter(postUserId => postUserId.user_id === item.user_id).map((userItem, userIndex) => (
-              <Link to={`Details/${item.post_id}`}>
-                <Content key={userIndex} src={item.title} title={item.title} user={userItem.username} date={item.date} party={item.party_size}></Content>
+              <Link key={userIndex} to={`Details/${item.post_id}`}>
+                <Content src={item.title} title={item.title} user={userItem.username} date={item.date} party={item.party_size}></Content>
               </Link>
             ))}
           </div>
