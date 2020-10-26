@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { useLogin } from '../contexts/ActionContext'
 
 const Container = styled.div`
     height: 500px;
@@ -10,6 +11,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+`
+const ActionContainer = styled.ul`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
 `
 
 const Form = styled.form`
@@ -88,19 +95,15 @@ const Submit = styled.div`
 `
 
 function FormLogin() {
+  const [{ isLogin, currentUsername}] = useLogin()
+
     return (
         <Container>
             <Form>
                 <Top>
                     <Title>Profile</Title>
                     <Space>
-                        <a>Username</a>
-                    </Space>
-                    <Space>
-                        <a>Contacts</a>
-                    </Space>
-                    <Space>
-                        <a>Email</a>
+                    {!isLogin ? <a>Username</a> : (currentUsername? currentUsername : '')}
                     </Space>
                 </Top>
 
