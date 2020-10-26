@@ -12,6 +12,12 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
+const ActionContainer = styled.ul`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+`
 
 const Form = styled.form`
     width: 300px;
@@ -97,10 +103,7 @@ function FormLogin() {
                 <Top>
                     <Title>Profile</Title>
                     <Space>
-                        {!isLogin ?
-                            <a>Username</a>
-                            : (currentUsername ? currentUsername : '')}
-
+                    {!isLogin ? <a>Username</a> : (currentUsername? currentUsername : '')}
                     </Space>
                 </Top>
 
