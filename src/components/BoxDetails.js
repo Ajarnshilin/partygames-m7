@@ -57,13 +57,15 @@ const Top = styled.div`
 
 const Bottom = styled.div`
     height: 50%;
+    width: 200px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
+    margin-left: 320px;
     a {
         font-size: 30px;
-        padding: 15px 35px;
+        padding: 5px 35px;
         font-weight: bold;
         color: #707070;
     }
@@ -118,7 +120,7 @@ function BoxDetails(props) {
                 </Top>
                 <Bottom>
                     <a>0/{props.party}</a>
-                    <Link to={`/Accepted/${id}`}>
+                    <Link to={`/Joined/${id}`}>
                       <Button>
                           Join
                       </Button>
