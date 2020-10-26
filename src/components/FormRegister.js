@@ -124,6 +124,7 @@ function FormRegister(callback) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log(values,"1")
     RegisterAPI(values)
     // console.log(values)
   };
@@ -184,10 +185,10 @@ function FormRegister(callback) {
             <a>Contact</a>
             <Textarea
               type ="text"
+              name="contact" 
               placeholder="Leave contact for your party"
               value={values.contact}
               onChange={handleChange}>
-              
             </Textarea>
 
             <Submit>
