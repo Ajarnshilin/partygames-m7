@@ -51,7 +51,7 @@ export default{
     component: lazy(()=> import('../pages/Joined'))
   },
   Posted:{
-    path: "/Posted:id",
+    path: "/Posted",
     exact: true,
     component: lazy(()=> import('../pages/Posted'))
   },

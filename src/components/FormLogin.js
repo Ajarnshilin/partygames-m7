@@ -15,7 +15,7 @@ const Container = styled.div`
     margin-top: 50px;
 `
 
-const Form = styled.form`
+const Form = styled.div`
     width: 300px;
     height: 100%;
     display: flex;
@@ -119,7 +119,7 @@ function FormLogin() {
 
     return (
       <Container>
-            {/* <Form> */}
+            <Form>
                 <Title>Login</Title>
                 <a>Username</a>
                 <Input type="text" name="username" id="username" placeholder="e.g. JohnDoe" onChange={handleOnInputUsername} onKeyDown={handleKeyPress}></Input>
@@ -131,7 +131,7 @@ function FormLogin() {
                     <Login type="submit" onClick={handleOnSubmit} >Login</Login>
                     <a>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></a>
                 </Submit>
-            {/* </Form> */}
+            </Form>
       </Container>
     )
 }

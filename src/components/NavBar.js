@@ -24,10 +24,12 @@ const Logo = styled.div`
   font-size: 30px;
   font-weight: bold;
   display:flex;
+  justify-content: center;
+  align-items: center;
   div{
     position: relative;
-    right: 15px;
-    bottom: 20px;
+    right: 10px;
+    bottom: 10px;
   }
 `
 
@@ -88,11 +90,11 @@ function NavBar() {
           <Action>
             <Link to='/Profile'>Profile</Link>
           </Action>
-          {!isLogin ? 
           <Action>
+            {!isLogin ? 
             <Button><Link to='/login'>Login</Link></Button>
+            : (currentUsername? currentUsername : '')}
           </Action>
-          : (currentUsername? currentUsername : '')}
         </ActionContainer>
       </Wrapper>
     </Container>
