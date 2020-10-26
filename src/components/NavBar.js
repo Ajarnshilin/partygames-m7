@@ -27,7 +27,8 @@ const Logo = styled.div`
   align-items: center;
   div{
     position: relative;
-    /* bottom: 35px; */
+    right: 10px;
+    bottom: 10px;
   }
 `
 
