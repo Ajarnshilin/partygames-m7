@@ -4,10 +4,11 @@ import routes from './config/routes'
 import withHelmet from './util/withHelmet'
 import NavBar from './components/NavBar'
 import GlobalStyle from './components/GlobalStyle'
+import Authprovider from './contexts/ActionContext'
 
 function App() {
   return (
-    <>
+    <Authprovider>
     <GlobalStyle />
       <Router>
         <NavBar />
@@ -19,7 +20,7 @@ function App() {
           </Switch>
         </Suspense>
       </Router>
-    </>
+    </Authprovider>
   );
 }
 

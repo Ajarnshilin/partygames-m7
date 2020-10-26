@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import styled from 'styled-components'
 import useScroll from '../util/useScroll'
 import { Link } from 'react-router-dom'
 import Lottie from 'react-lottie';
 import animationData from '../lotties/party';
+import { useLogin} from '../contexts/ActionContext'
 
 const Container = styled.div`
   width: 100%;
@@ -66,6 +67,7 @@ const defaultOptions = {
 
 function NavBar() {
   const isScroll = useScroll({ scrollRange: 20 })
+  const [{ isLogin, currentUsername}] = useLogin()
 
   return (
     <Container isScroll={isScroll}>
@@ -74,7 +76,7 @@ function NavBar() {
           options={defaultOptions}
           height={50}
           width={50}
-        /><Link to='/'>Party Games</Link></Logo>
+          /><Link to='/'>Party Games</Link></Logo>
         
         <ActionContainer>
           <Action>
@@ -86,9 +88,11 @@ function NavBar() {
           <Action>
             <Link to='/Profile'>Profile</Link>
           </Action>
+          {!isLogin ? 
           <Action>
             <Button><Link to='/login'>Login</Link></Button>
           </Action>
+          : (currentUsername? currentUsername : '')}
         </ActionContainer>
       </Wrapper>
     </Container>
