@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import PostAPI from '../services/postAPI'
 
 const Container = styled.div`
     height: 500px;
@@ -93,19 +94,73 @@ const Submit = styled.div`
     }
 `
 
-function FormLogin() {
+function FormLogin(callback) {
+
+  const [values, setValues] = useState({
+    title:'',
+    details:'',
+    party_size:''
+    // date:''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(values,"1")
+    PostAPI(values)
+    // console.log(values)
+  };
+
+  useEffect(
+    () => {
+      if (isSubmitting) {
+        callback();
+      }
+    },
+    []
+  );
+
     return (
         <Container>
-            <Form>
+            <Form onSubmit={handleSubmit} method="POST">
                 <Title>Post</Title>
                 <a>Title</a>
-                <Input type="text" placeholder="What are you playing?"></Input>
+                <Input 
+                  type="text" 
+                  name="title"
+                  id="title"
+                  placeholder="What are you playing?"
+                  value={values.title}
+                  onChange={handleChange}>
+                </Input>
 
                 <a>Details</a>
-                <Textarea type="text" placeholder="Tell people more about your party's game style"></Textarea>
+                <Textarea 
+                  type="text" 
+                  name="details"
+                  id="details"
+                  placeholder="Tell people more about your party's game style"
+                  value={values.details}
+                  onChange={handleChange}>
+                </Textarea>
 
                 <a>Party Size</a>
-                <Input type="number" placeholder="The number of member you need"></Input>
+                <Input 
+                type="text" 
+                name="party_size"
+                id="party)size"
+                placeholder="The number of member you need"
+                value={values.party_size}
+                onChange={handleChange}></Input>
 
                 <Submit>
                     <Button type="submit">Post</Button>

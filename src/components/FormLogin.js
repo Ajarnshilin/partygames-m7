@@ -96,7 +96,7 @@ function FormLogin() {
                 <Input type="text" name="username" id="username" placeholder="e.g. JohnDoe"></Input>
 
                 <a>Password</a>
-                <Input type="password" name="password" id="password" placeholder="**********"></Input>
+                <Input type="password" name="password" id="password" placeholder="Password"></Input>
 
                 <Submit>
                     <Login type="submit">Login</Login>
