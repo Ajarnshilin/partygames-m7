@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import RegisterAPI from '../services/registerAPI'
 
 const Container = styled.div`
     height: 600px;
@@ -102,26 +103,92 @@ const Register = styled.button`
     outline: none;
 `
 
-function FormRegister() {
+function FormRegister(callback) {
+
+  const [values, setValues] = useState({
+    username:'',
+    email:'',
+    password:'',
+    contact:''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    RegisterAPI(values)
+    // console.log(values)
+  };
+
+  useEffect(
+    () => {
+      if (isSubmitting) {
+        callback();
+      }
+    },
+    []
+  );
+
+
     return (
-        <Container>
-        <Form method="POST" action="{{route('/login')}}">
+      <Container>
+        <Form onSubmit={handleSubmit} method="POST" action="{{route('/login')}}">
             <Title>Register</Title>
 
             <a>Username</a>
-            <Input type ="text" name="username" id="username" placeholder="e.g. JohnDoe"></Input>
+            <Input 
+              type ="text" 
+              name="username" 
+              id="username" 
+              placeholder="e.g. JohnDoe"
+              value={values.username} 
+              onChange={handleChange}>
+            </Input>
 
             <a>Email</a>
-            <Input type ="text" name="email" id="email" placeholder="e.g. JohnDoe@example.com"></Input>
+            <Input 
+              type ="text" 
+              name="email" 
+              id="email" 
+              placeholder="e.g. JohnDoe@example.com"
+              value={values.email}
+              onChange={handleChange}>
+            </Input>
 
             <a>Password</a>
-            <Input type ="password" name="password" id="password" placeholder="**********"></Input>
+            <Input 
+              type ="password" 
+              name="password" 
+              id="password" 
+              placeholder="Password"
+              value={values.password}
+              onChange={handleChange}>
+            </Input>
 
             <a>Confirm Password</a>
-            <Input type ="password" name="comfirmPassword" id="comfirmPassword" placeholder="**********"></Input>
+            <Input 
+              type ="password" 
+              name="comfirmPassword" 
+              id="comfirmPassword" 
+              placeholder="Type your password again">
+            </Input>
 
-            <a>Contacts</a>
-            <Textarea type ="textarea"></Textarea>
+            <a>Contact</a>
+            <Textarea
+              type ="text"
+              placeholder="Leave contact for your party"
+              value={values.contact}
+              onChange={handleChange}>
+              
+            </Textarea>
 
             <Submit>
             <Button type ="submit">Submit</Button>
@@ -129,7 +196,7 @@ function FormRegister() {
             </Submit>
 
         </Form>
-    </Container>
+        </Container>
     )
 }
 
