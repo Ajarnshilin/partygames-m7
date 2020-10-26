@@ -141,7 +141,7 @@ function FormRegister(callback) {
 
     return (
       <Container>
-        <Form onSubmit={handleSubmit} method="POST" action="{{route('/login')}}">
+        <Form onSubmit={handleSubmit}>
             <Title>Register</Title>
 
             <a>Username</a>
@@ -153,6 +153,7 @@ function FormRegister(callback) {
               value={values.username} 
               onChange={handleChange}>
             </Input>
+            {/* requires at least 5 letters */}
 
             <a>Email</a>
             <Input 
@@ -173,6 +174,7 @@ function FormRegister(callback) {
               value={values.password}
               onChange={handleChange}>
             </Input>
+            {/* requires at least 8 digits */}
 
             <a>Confirm Password</a>
             <Input 

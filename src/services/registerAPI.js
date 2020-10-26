@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default function RegisterAPI(values,setErrors) {
+export default function RegisterAPI(values) {
   console.log(values)
     axios ( {
       url: 'http://localhost:3333/register',
