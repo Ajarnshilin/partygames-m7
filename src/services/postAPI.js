@@ -1,18 +1,18 @@
-import React from 'react'
+import axios from 'axios'
 
-export default function componentDidMount() {
-  const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body
-  }
-  fetch('http://localhost:3333/posts', requestOptions)
-      .then(async response => {
-          const data = await response.json();
-          if (!response.ok) {
-              const error = (data && data.message) || response.status;
-              return Promise.reject(error);
-          }
-          this.setState({ postId: data.id })
-      })
-    }
+export default function RegisterAPI(values) {
+  console.log(values)
+    axios ( {
+      url: 'http://localhost:3333/posts',
+      method: 'post',
+      data: {
+        "title": values.title,
+        "details": values.email,
+        "party_size": values.party_size
+      },
+      responseType: 'json', 
+    }) .then(response => {
+      console.log(response)
+
+    })
+}
