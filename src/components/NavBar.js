@@ -90,11 +90,11 @@ function NavBar() {
           <Action>
             <Link to='/Profile'>Profile</Link>
           </Action>
-          {!isLogin ? 
           <Action>
+            {!isLogin ? 
             <Button><Link to='/login'>Login</Link></Button>
+            : (currentUsername? currentUsername : '')}
           </Action>
-          : (currentUsername? currentUsername : '')}
         </ActionContainer>
       </Wrapper>
     </Container>
