@@ -23,10 +23,11 @@ const Logo = styled.div`
   font-size: 30px;
   font-weight: bold;
   display:flex;
+  justify-content: center;
+  align-items: center;
   div{
     position: relative;
-    right: 15px;
-    bottom: 20px;
+    /* bottom: 35px; */
   }
 `
 
@@ -75,7 +76,7 @@ function NavBar() {
           height={50}
           width={50}
         /><Link to='/'>Party Games</Link></Logo>
-        
+
         <ActionContainer>
           <Action>
             <Link to='/'>Home</Link>
